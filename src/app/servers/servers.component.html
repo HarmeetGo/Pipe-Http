@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)]="filteredString">
+<button (click)="onAddServer()">Add Server</button>
+<p *ngFor="let server of servers | filter:filteredString:'status'">
+    {{server.instancetype | uppercase }} <br>
+    {{server.name | shorten:7}}<br>
+    {{server.date | date:'fullDate' | uppercase}}<br>
+    {{server.status}}
+ </p>
+{{statusHighlight | async}}
